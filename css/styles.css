@@ -48,12 +48,12 @@ body {
 
 /* ─── Header ─── */
 .page-header {
-  padding: 72px 48px 48px;
+  padding: 48px 48px 48px;
   text-align: center;
 }
 
 .page-header h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: 3rem;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
@@ -70,7 +70,7 @@ body {
 /* ─── Project Item ─── */
 .project-item {
   display: grid;
-  grid-template-columns: 260px 1fr 48px;
+  grid-template-columns: 320px 1fr 48px;
   align-items: start;
   gap: 0 32px;
   padding: 48px 0;
@@ -87,8 +87,8 @@ body {
 /* ─── Project Number ─── */
 .project-number {
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--ink-muted);
   padding-top: 10px;
   letter-spacing: 0.12em;
@@ -122,8 +122,8 @@ body {
 
 .project-desc {
   font-family: 'Jost', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 300;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.8;
   color: var(--ink-muted);
   max-width: 560px;
