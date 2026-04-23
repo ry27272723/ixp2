@@ -1,0 +1,228 @@
+/* ─── Base ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f8efe8;
+  --ink: #1c1c1a;
+  --ink-muted: #8a7a72;
+  --border: #ddd0c8;
+  --accent: #1c1c1a;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Nav ─── */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 28px 48px;
+}
+
+.nav-name {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.nav-course {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Header ─── */
+.page-header {
+  padding: 72px 48px 48px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Project List ─── */
+.project-list {
+  flex: 1;
+  padding: 0 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ─── Project Item ─── */
+.project-item {
+  display: grid;
+  grid-template-columns: 260px 1fr 48px;
+  align-items: start;
+  gap: 0 32px;
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+
+
+/* ─── Project Number ─── */
+.project-number {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--ink-muted);
+  padding-top: 10px;
+  letter-spacing: 0.12em;
+}
+
+/* ─── Project Content ─── */
+.project-content {
+  padding-right: 24px;
+}
+
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.project-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.project-title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.project-desc {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--ink-muted);
+  max-width: 560px;
+  letter-spacing: 0.03em;
+}
+
+/* ─── Arrow ─── */
+.project-arrow {
+  font-size: 1.2rem;
+  padding-top: 8px;
+  color: var(--ink-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+  justify-self: end;
+}
+
+.project-item:hover .project-arrow {
+  transform: translateX(4px);
+  color: var(--ink);
+}
+
+/* ─── Hover Preview ─── */
+.project-preview {
+  position: fixed;
+  width: 260px;
+  height: auto;
+  min-height: 60px;
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 0;
+  transform: translate(-50%, -115%);
+  overflow: hidden;
+  background-color: var(--bg);
+}
+
+.project-item:hover .project-preview {
+  opacity: 1;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-preview-label {
+  padding: 8px 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+}
+
+/* ─── Footer ─── */
+.page-footer {
+  padding: 32px 48px;
+  border-top: 1px solid var(--border);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-top: 48px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 20px 24px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .page-header {
+    padding: 48px 24px 32px;
+  }
+
+  .project-list {
+    padding: 0 24px;
+  }
+
+  .project-item {
+    grid-template-columns: 80px 1fr 32px;
+    gap: 0 16px;
+    padding: 36px 0;
+  }
+
+  .project-desc {
+    font-size: 0.78rem;
+  }
+
+  .project-preview {
+    width: 160px;
+    height: 120px;
+  }
+
+  .page-footer {
+    padding: 24px;
+  }
+}
